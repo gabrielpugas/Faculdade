@@ -8,5 +8,9 @@ public class Main {
         for (int i = 0; i < TL; i++) {
             lista.InserirNoInicio(vetor[i]);
         }
+
+        lista.Remover(8);
+        lista.Exibir();
+        lista.InsercaoBinaria();
     }
 }

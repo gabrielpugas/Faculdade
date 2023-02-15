@@ -3,6 +3,7 @@ public class No {
     private No ant;
     private No prox;
 
+    public No(){}
     public No(int info, No ant, No prox){
         this.info = info;
         this.ant = ant;
