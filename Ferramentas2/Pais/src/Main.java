@@ -24,5 +24,23 @@ public class Main {
         for (Pais p:listPaises) {
             System.out.println("Densidade do "+p.getNome()+" = "+p.getDensidade());
         }
+
+        Continente americaDoSul = new Continente("América do Sul");
+
+        americaDoSul.addPais(br);
+        americaDoSul.addPais(py);
+
+        br.addVizinho(py);
+        py.addVizinho(cl);
+
+        System.out.println(americaDoSul.razaoMaiorMenorPais());
+
+        br.getVizinhos().forEach((vizinho)->{
+            System.out.println(vizinho.getNome());
+        });
+
+        br.vizinhosComuns(py).forEach((comuns)->{
+            System.out.println(comuns.getNome());
+        });
     }
 }

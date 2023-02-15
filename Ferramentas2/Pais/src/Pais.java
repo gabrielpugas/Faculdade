@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pais {
     private String codigo;
     private String nome;
     private int populacao;
     private double dimensao;
+    private List<Pais> vizinhos = new ArrayList<Pais>();
 
     public Pais(){
         this("","",0,0); //não é necessário, pois o java já seta os valores padrão
@@ -12,6 +16,7 @@ public class Pais {
         this.nome = nome;
         setPopulacao(populacao);
         setDimensao(dimensao);
+        vizinhos = new ArrayList<Pais>();
     }
 
     public String getCodigo() {
@@ -50,5 +55,23 @@ public class Pais {
 
     public double getDensidade(){
         return populacao/dimensao;
+    }
+
+    public boolean addVizinho(Pais vizinho){
+         return vizinhos.add(vizinho);
+    }
+
+    public List<Pais> getVizinhos() {
+        return vizinhos;
+    }
+
+    public List<Pais> vizinhosComuns(Pais outro){
+        List<Pais> vizinhosComuns = new ArrayList<Pais>();
+        for (Pais p1 : vizinhos)
+            for (Pais p2 : outro.getVizinhos())
+                if(p1==p2)
+                    vizinhosComuns.add(p1);
+        return vizinhosComuns;
+
     }
 }
