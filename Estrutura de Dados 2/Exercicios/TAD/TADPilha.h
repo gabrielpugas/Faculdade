@@ -84,3 +84,49 @@ void reiniciaRecursivo(StrDin* *str) {
         *str = NULL;
     }
 }
+
+void exibeInvertidoRecursivo(StrDin *str){
+    if(str != NULL){
+        exibeInvertidoRecursivo(str->prox);
+        printf("%c",str->letra);
+    }
+}
+
+void exibeInvertidoIterativo(StrDin *str) {
+    Pilha *p;
+    init(&p);
+    while (str != NULL) {
+        push(&p, str);
+        str = str->prox;
+    }
+    while (!isEmpty(p)) {
+        pop(&p, &str);
+        printf("%c", str->letra);
+    }
+}
+
+void tamanho(StrDin* str, int *quant){
+    if(str != NULL){
+        (*quant)++; // *quant = *quant + 1;
+        tamanho(str->prox, &*quant);
+    }
+}
+
+int tamanhoRecursivo(StrDin* str){
+    if(str != NULL)
+        return tamanhoRecursivo(str->prox) + 1;
+    else
+        return 0;
+}
+
+void copia(StrDin* str1, StrDin* *str2){
+    while(str1 != NULL){
+        insereTipoFila(&*str2, str1->letra);
+        str1 = str1->prox;
+    }
+}
+
+void concatena(StrDin* str1, StrDin* str2, StrDin* *str3){
+    copia(str1, &*str3);
+    copia(str2, &*str3);
+}
