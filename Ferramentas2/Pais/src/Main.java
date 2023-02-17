@@ -16,7 +16,9 @@ public class Main {
         listPaises.add(py);
         System.out.println("Densidade do "+py.getNome()+" = "+py.getDensidade());
 
-        listPaises.add(new Pais("ISO 3166-2","Chile",19490000,756950));
+        Pais cl = new Pais("ISO 3166-2","Chile",19490000,756950);
+        listPaises.add(cl);
+
 
         for(int i=0; i<listPaises.size(); i++){
             System.out.println("Densidade do "+listPaises.get(i).getNome()+" = "+listPaises.get(i).getDensidade());
@@ -32,12 +34,14 @@ public class Main {
 
         br.addVizinho(py);
         py.addVizinho(cl);
+        br.addVizinho(cl);
+
 
         System.out.println(americaDoSul.razaoMaiorMenorPais());
 
-        br.getVizinhos().forEach((vizinho)->{
-            System.out.println(vizinho.getNome());
-        });
+//        br.getVizinhos().forEach((vizinho)->{
+//            System.out.println(vizinho.getNome());
+//        });
 
         br.vizinhosComuns(py).forEach((comuns)->{
             System.out.println(comuns.getNome());
