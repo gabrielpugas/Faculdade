@@ -1,15 +1,17 @@
-<%@ page import="java.time.LocalTime" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<%@page import="com.example.demo1.Saudacao"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JSP Page</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
-<% LocalTime horario = LocalTime.now();
-    int hora = horario.getHour();
-    out.print(hora);%>
-<br/>
+<div id="saudacao">
+    <%= new Saudacao().getSaudacao() %>
+</div>
 </body>
 </html>
