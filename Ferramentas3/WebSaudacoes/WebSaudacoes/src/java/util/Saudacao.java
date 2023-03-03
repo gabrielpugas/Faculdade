@@ -15,5 +15,4 @@ public class Saudacao {
             return "Boa tarde";
         }
     }
-
 }

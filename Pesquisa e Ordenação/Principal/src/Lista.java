@@ -105,4 +105,23 @@ public class Lista {
             pos = BuscaBinaria(aux, TamanhoParteOrdenada(i));
         }
     }
+
+    public void BubbleSort(){
+        int TL = filesize();
+        Registro reg1 = new Registro();
+        Registro reg2 = new Registro();
+        while(TL>1){
+            for(int i=0; i<TL-1;i++){
+                seekArq(i);
+                reg1.leDoArq(arquivo);
+                reg2.leDoArq(arquivo);
+                if(reg1.getCodigo()>reg2.getCodigo()){
+                    seekArq(i);
+                    reg2.gravaNoArq(arquivo);
+                    reg1.gravaNoArq(arquivo);
+                }
+            }
+        }
+        TL--;
+    }
 }

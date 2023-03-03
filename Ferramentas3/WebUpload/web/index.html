@@ -6,12 +6,15 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Web Upload - Ferramentas 3</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Controllers/IndexController.js" type="text/javascript"></script>
     </head>
-    <body>
-        <form method="POST" action="UpServlet" enctype="multipart/form-data" >
+    <body onload="carregarMensagem()">
+        <div id="mensagem" style="font-size: 18px"></div>
+        <hr/>
+        <form id="fdados" method="POST" onsubmit="this.enviaArquivo()" enctype="multipart/form-data" >
             Arquivo:
             <input type="file" name="file"/> <br/>
             Destino:
