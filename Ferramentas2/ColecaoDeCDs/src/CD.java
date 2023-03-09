@@ -1,27 +1,17 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class CD {
-    private List<Musica> musicas;
+    private List<Musica> faixas = new ArrayList<Musica>();
     private String nome;
     private String artista;
     private int anoDeLancamento;
 
     public CD (String nome, String artista, int anoDeLancamento){
-        this.nome = nome;
-        this.artista = artista;
-        this.anoDeLancamento = anoDeLancamento;
-    }
-    public void addMusica(Musica musica) {
-        musicas.add(musica);
-    }
-
-    public List<Musica> getMusicas() {
-        return musicas;
-    }
-
-    public void setMusicas(List<Musica> musicas) {
-        this.musicas = musicas;
+        setNome(nome);
+        setArtista(artista);
+        setAnoDeLancamento(anoDeLancamento);
     }
 
     public String getNome() {
@@ -46,5 +36,18 @@ public class CD {
 
     public void setAnoDeLancamento(int anoDeLancamento) {
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public void addFaixa(Musica faixa){
+        faixas.add(faixa);
+    }
+
+    public void getFaixas(){
+        int i = 1;
+        for (Musica musica:faixas
+        ) {
+            System.out.println("Música "+i+" - "+musica.getNome()+" - "+"Duração: "+musica.getDuracao());
+            i++;
+        }
     }
 }

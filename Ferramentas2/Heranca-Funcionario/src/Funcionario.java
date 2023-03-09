@@ -4,7 +4,6 @@ public class Funcionario {
     private int horasTrabalhadas;
     private double valorHora;
 
-
     public Funcionario(int ctps, String nome, int horasTrabalhadas, double valorHora){
         setCtps(ctps);
         setNome(nome);
@@ -13,8 +12,8 @@ public class Funcionario {
     }
 
     public Funcionario(int ctps, String nome) {
-        this.ctps = ctps;
-        this.nome = nome;
+        setCtps(ctps);
+        setNome(nome);
     }
 
     public int getCtps() {
